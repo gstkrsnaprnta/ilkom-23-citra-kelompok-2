@@ -16,3 +16,7 @@ def convert_to_ink_blot(input_path, output_path, threshold=127):
     Raises:
         ValueError: Jika gambar gagal dimuat atau ada kesalahan saat memproses.
     """
+    # Membaca gambar dari lokasi yang diberikan dalam mode warna
+    img = cv2.imread(input_path, cv2.IMREAD_COLOR)
+    if img is None:
+        raise FileNotFoundError(f"Gambar tidak dapat dibaca atau tidak ditemukan: {input_path}")
