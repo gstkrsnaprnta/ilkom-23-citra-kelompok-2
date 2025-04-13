@@ -12,3 +12,6 @@ def convert_to_grayscale(input_path, output_path):
    Raises:
         ValueError: Jika gambar gagal dimuat (misalnya, file rusak atau tidak ada).
     """
+  # Membaca gambar dari lokasi yang diberikan
+    image = cv2.imread(input_path)
+    
