@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 def resize_image(input_path, output_path, resolution='original', width=None, height=None):
     """

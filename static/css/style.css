@@ -11,6 +11,7 @@
     --ghibli-blue: #4e7e89;
     --ghibli-green: #8fd1a8;
 }
+
 /* --- Global Styles --- */
 * {
     margin: 0;
@@ -18,15 +19,18 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 body {
     background-color: var(--light);
     color: var(--dark);
 }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
 .hidden {
     display: none;
 }
