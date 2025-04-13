@@ -17,3 +17,6 @@ def convert_to_line_art(input_path, output_path, low_threshold=100, high_thresho
     Raises:
         ValueError: Jika gambar gagal dimuat atau ada kesalahan saat memproses.
     """
+    try:
+        # Membaca gambar dari lokasi yang diberikan
+
