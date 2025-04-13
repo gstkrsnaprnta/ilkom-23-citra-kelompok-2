@@ -18,16 +18,19 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
   Raises:
         ValueError: Jika gambar gagal dimuat atau parameter ukuran tidak valid.
     """
-    # Membaca gambar dari lokasi yang diberikan
+ # Membaca gambar dari lokasi yang diberikan
     img = cv2.imread(input_path)
     
  # Memeriksa apakah gambar berhasil dimuat
         if image is None:
             raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
         
-       # Mengubah gambar berwarna menjadi hitam-putih untuk memudahkan deteksi garis
+ # Mengubah gambar berwarna menjadi hitam-putih untuk memudahkan deteksi garis
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-      # Membuat garis seni dengan menonjolkan tepi gambar
+ # Membuat garis seni dengan menonjolkan tepi gambar
         edges = cv2.Canny(gray, low_threshold, high_threshold)
      
+ # Mengubah kembali ke format warna agar cocok dengan efek lain
+        edges_bgr = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
+        
