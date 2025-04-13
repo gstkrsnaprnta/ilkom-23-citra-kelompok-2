@@ -36,5 +36,6 @@ def convert_to_line_art(input_path, output_path, low_threshold=100, high_thresho
         # Menyimpan hasil gambar garis seni ke lokasi yang ditentukan
         cv2.imwrite(output_path, edges_bgr)
         
-        
+        # Mengembalikan lokasi file hasil
+        return output_path
 
