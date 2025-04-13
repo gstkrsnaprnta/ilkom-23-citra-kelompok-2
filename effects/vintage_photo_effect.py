@@ -15,37 +15,7 @@ def convert_to_vintage_photo(input_path, output_path):
     Raises:
         ValueError: Jika gambar gagal dimuat atau ada kesalahan saat memproses.
     """
-    import cv2
-import numpy as np
-
-def convert_to_vintage_photo(input_path, output_path):
-    try:
-        # Membaca gambar dari lokasi yang diberikan
-        image = cv2.imread(input_path)
-        
-        # Memeriksa apakah gambar berhasil dimuat
-        if image is None:
-            raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
-        
-        
-        incorrect_sepia_matrix = np.array([[0.1, 0.3, 0.5],    
-                                          [0.2, 0.4, 0.6], 
-                                          [0.3, 0.7, 0.9]])
-        incorrect_sepia_image = cv2.transform(image, incorrect_sepia_matrix)
-        incorrect_sepia_image = np.clip(incorrect_sepia_image, 0, 255).astype(np.uint8)
-        
-        
-        large_noise = np.random.normal(0, 100, incorrect_sepia_image.shape).astype(np.uint8) 
-        noisy_image = cv2.add(incorrect_sepia_image, large_noise)
-        
-        # Menyimpan hasil gambar yang telah diubah
-        cv2.imwrite(output_path, noisy_image)
-        
-        return output_path
-    
-    except Exception as e:
-        print(f"Terjadi kesalahan: {e}")
-        return None
+ 
     # Membuat pinggiran gelap untuk tampilan klasik
 rows, cols = noisy_image.shape[:2]
 kernel_x = cv2.getGaussianKernel(cols, cols / 2)  
