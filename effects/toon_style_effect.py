@@ -16,16 +16,14 @@ def convert_to_toon_style(input_path, output_path):
     """
   # Membaca gambar dari lokasi yang diberikan
     img = cv2.imread(input_path)
- # Memeriksa apakah gambar berhasil dimuat
+    
+  # Memeriksa apakah gambar berhasil dimuat
     if img is None:
         raise ValueError(f"Gagal memuat gambar. Pastikan file ada dan tidak rusak: {input_path}")
-    
-    # Mengubah gambar ke grayscale sebagai dasar garis kartun
+
+     # Mengubah gambar ke hitam-putih untuk membuat garis kartun
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-    # Menambahkan sedikit blur untuk menghaluskan noise sebelum membuat garis
-    gray = cv2.medianBlur(gray, 5)
-
+    
  # Menghaluskan gambar hitam-putih agar garis lebih rapi
     gray = cv2.medianBlur(gray, 5)
     
