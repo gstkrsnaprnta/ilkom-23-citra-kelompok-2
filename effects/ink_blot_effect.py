@@ -27,3 +27,9 @@ def convert_to_ink_blot(input_path, output_path, threshold=127):
     
     # Membuat efek tinta dengan memisahkan warna jadi hitam atau putih saja
     _, binary = cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY)
+    
+    # Menyimpan hasil gambar tinta ke lokasi yang ditentukan
+    cv2.imwrite(output_path, binary)
+    
+    # Mengembalikan lokasi file hasil
+    return output_path
