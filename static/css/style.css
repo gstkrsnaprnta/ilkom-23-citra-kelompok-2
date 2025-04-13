@@ -178,6 +178,32 @@ header {
     margin-bottom: 40px;
 }
 
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 200px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.step p {
+    text-align: center;
+    color: #666;
+}
+
 
 text-align: center;
 }
