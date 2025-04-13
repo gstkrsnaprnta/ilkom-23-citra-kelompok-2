@@ -30,5 +30,7 @@ def convert_to_line_art(input_path, output_path, low_threshold=100, high_thresho
         # Membuat garis seni dengan menonjolkan tepi gambar
         edges = cv2.Canny(gray, low_threshold, high_threshold)
         
+        # Mengubah kembali ke format warna agar cocok dengan efek lain
+        edges_bgr = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
         
 
