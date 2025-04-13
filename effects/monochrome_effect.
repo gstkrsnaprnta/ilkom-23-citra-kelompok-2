@@ -15,3 +15,7 @@ def convert_to_grayscale(input_path, output_path):
   # Membaca gambar dari lokasi yang diberikan
     image = cv2.imread(input_path)
     
+   # Memeriksa apakah gambar berhasil dimuat
+    if image is None:
+        raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
+    
