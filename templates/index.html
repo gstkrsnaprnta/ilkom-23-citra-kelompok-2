@@ -116,3 +116,24 @@
                             <option value="art_sketch">Art Sketch</option>
                             <option value="vintage_photo">Vintage Photo</option>
                         </select>
+                    </div>
+                    <div class="upload-area" id="upload-area">
+                        <div class="upload-icon">📁</div>
+                        <div class="upload-text">
+                            <h3>Drop Your Image Here</h3>
+                            <p>or browse from your device</p>
+                        </div>
+                        <input type="file" class="file-input" id="file-input" accept="image/*">
+                        <button class="upload-button" id="upload-button">Choose File</button>
+                    </div>
+                    <div id="result-area" class="result-area hidden">
+                        <h3>Your Sketchify Artwork</h3>
+                        <div class="image-comparison">
+                            <div class="image-container">
+                                <h4>Before</h4>
+                                <img id="original-image" class="result-img" alt="Original Image">
+                            </div>
+                            <div class="image-container">
+                                <h4>After</h4>
+                                <img id="result-image" class="result-img" alt="Transformed Image">
+                            </div>
