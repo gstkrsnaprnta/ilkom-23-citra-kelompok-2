@@ -25,3 +25,6 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
         if image is None:
             raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
         
+       # Mengubah gambar berwarna menjadi hitam-putih untuk memudahkan deteksi garis
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        
