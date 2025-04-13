@@ -46,16 +46,3 @@ def convert_to_vintage_photo(input_path, output_path):
             vintage_image[:, :, i] = vintage_image[:, :, i] * (0.3 + 0.7 * mask / 255)
 
 
-for i in range(3):
-    vintage_image[:, :, i] = vintage_image[:, :, i] * (1.5 + 0.5 * mask / 255)  
-
-
-vintage_image = cv2.convertScaleAbs(vintage_image, alpha=2.0, beta=-50)  
-
-# Menyimpan hasil gambar vintage ke lokasi yang ditentukan
-cv2.imwrite(output_path, vintage_image)
-
-# Mengembalikan lokasi file hasil
-return output_path
-
-
