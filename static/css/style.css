@@ -160,6 +160,12 @@ header {
     color: #666;
 }
 
+/* --- Transformation Demo --- */
+.transform-demo {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
 
 text-align: center;
 }
