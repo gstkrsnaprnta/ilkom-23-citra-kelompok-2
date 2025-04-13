@@ -22,3 +22,9 @@ def convert_to_art_sketch(input_path, output_path):
         # Memeriksa apakah gambar berhasil dimuat
         if image is None:
             raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
+        
+        # Mengubah gambar ke hitam-putih untuk mempersiapkan sketsa
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        
+        # Menghaluskan gambar untuk membuat garis lebih rapi
+        blurred = cv2.GaussianBlur(gray, (5, 5), 0)
