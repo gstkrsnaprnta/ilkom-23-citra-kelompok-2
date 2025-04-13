@@ -166,6 +166,12 @@ header {
     background-color: #f8f9fa;
 }
 
+.transform-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 
 text-align: center;
 }
