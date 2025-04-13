@@ -14,3 +14,5 @@ def convert_to_toon_style(input_path, output_path):
     Raises:
         ValueError: Jika gambar gagal dimuat atau ada kesalahan saat memproses.
     """
+  # Membaca gambar dari lokasi yang diberikan
+    img = cv2.imread(input_path)
