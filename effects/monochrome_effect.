@@ -22,3 +22,9 @@ def convert_to_grayscale(input_path, output_path):
    # Mengubah gambar berwarna menjadi hitam-putih
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
+   # Mengubah kembali ke format warna agar kompatibel dengan efek lain
+    gray_image = cv2.cvtColor(gray_image, cv2.COLOR_GRAY2BGR)
+    
+    # Menyimpan hasil gambar hitam-putih ke lokasi yang ditentukan
+    cv2.imwrite(output_path, gray_image)
+    
