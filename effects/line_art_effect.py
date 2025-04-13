@@ -21,3 +21,7 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
     # Membaca gambar dari lokasi yang diberikan
     img = cv2.imread(input_path)
     
+ # Memeriksa apakah gambar berhasil dimuat
+        if image is None:
+            raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
+        
