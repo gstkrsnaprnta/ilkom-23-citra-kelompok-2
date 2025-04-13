@@ -34,3 +34,9 @@ def convert_to_art_sketch(input_path, output_path):
         sobely = cv2.Sobel(blurred, cv2.CV_64F, 0, 1, ksize=3)
         edges = np.sqrt(sobelx**2 + sobely**2)
         edges = cv2.normalize(edges, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
+        
+        # Membalik garis untuk memberikan efek sketsa yang terang
+        inverted_edges = 255 - edges
+        
+        # Menggabungkan garis sketsa dengan detail gambar asli
+        sketch = cv2.addWeighted(inverted_edges, 0.8, gray, 0.2, 0)
