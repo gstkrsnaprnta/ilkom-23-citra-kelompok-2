@@ -27,4 +27,7 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
         
        # Mengubah gambar berwarna menjadi hitam-putih untuk memudahkan deteksi garis
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        
+
+      # Membuat garis seni dengan menonjolkan tepi gambar
+        edges = cv2.Canny(gray, low_threshold, high_threshold)
+     
