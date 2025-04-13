@@ -11,3 +11,10 @@
     --ghibli-blue: #4e7e89;
     --ghibli-green: #8fd1a8;
 }
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
