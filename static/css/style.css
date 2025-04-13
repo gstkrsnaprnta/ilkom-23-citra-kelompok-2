@@ -102,6 +102,11 @@ header {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* --- Features Section --- */
+.features {
+    padding: 80px 0;
+    background-color: white;
+}
 
 text-align: center;
 }
