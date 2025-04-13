@@ -10,3 +10,9 @@ def convert_to_ink_blot(input_path, output_path, threshold=127):
         output_path (str): Lokasi untuk menyimpan hasil gambar tinta.
         threshold (int): Nilai batas untuk memisahkan hitam dan putih (default: 127).
     
+   Returns:
+        str: Lokasi file hasil (output_path).
+    
+    Raises:
+        ValueError: Jika gambar gagal dimuat atau ada kesalahan saat memproses.
+    """
