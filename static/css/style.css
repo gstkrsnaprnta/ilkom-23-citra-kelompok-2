@@ -115,3 +115,11 @@ text-align: center;
 .resolution-options {
     margin-bottom: 20px;
 }
+.conversion-options label,
+.resolution-options label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
