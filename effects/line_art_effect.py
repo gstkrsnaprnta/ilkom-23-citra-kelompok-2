@@ -38,4 +38,8 @@ def convert_to_line_art(input_path, output_path, low_threshold=100, high_thresho
         
         # Mengembalikan lokasi file hasil
         return output_path
+    except Exception as e:
+        raise ValueError(f"Kesalahan saat membuat garis seni: {str(e)}")
+ 
+ 
 
