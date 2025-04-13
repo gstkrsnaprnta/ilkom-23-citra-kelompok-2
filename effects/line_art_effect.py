@@ -26,4 +26,9 @@ def convert_to_line_art(input_path, output_path, low_threshold=100, high_thresho
      
         # Mengubah gambar berwarna menjadi hitam-putih untuk memudahkan deteksi garis
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        
+        # Membuat garis seni dengan menonjolkan tepi gambar
+        edges = cv2.Canny(gray, low_threshold, high_threshold)
+        
+        
 
