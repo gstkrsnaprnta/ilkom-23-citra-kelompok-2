@@ -58,6 +58,13 @@ header {
     height: 30px;
 }
 
+.logo h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* --- Hero Section --- */
 text-align: center;
 }
 
