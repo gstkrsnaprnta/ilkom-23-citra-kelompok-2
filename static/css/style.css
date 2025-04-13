@@ -43,3 +43,10 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+text-align: center;
+}
+
+.upload-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
