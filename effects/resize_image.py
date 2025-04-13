@@ -46,3 +46,19 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
     else:
         raise ValueError("Pilihan resolusi tidak valid. Gunakan 'original', '720p', '1080p', atau 'custom'.")
     
+  # Mengubah ukuran gambar jika berbeda dari aslinya
+    if (new_w, new_h) != (w, h):
+        # Memilih metode terbaik: INTER_CUBIC untuk memperbesar, INTER_AREA untuk memperkecil
+        if new_w * new_h > w * h:
+            interpolation = cv2.INTER_CUBIC
+        else:
+            interpolation = cv2.INTER_AREA
+        result = cv2.resize(img, (new_w, new_h), interpolation=interpolation)
+    else:
+        result = img
+    
+    # Menyimpan hasil gambar ke lokasi yang ditentukan
+    cv2.imwrite(output_path, result, [cv2.IMWRITE_JPEG_QUALITY, 90])
+    
+    # Mengembalikan lokasi file hasil
+    return output_path
