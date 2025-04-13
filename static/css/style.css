@@ -233,6 +233,19 @@ header {
     margin: 0;
 }
 
+/* --- Upload Section --- */
+.upload-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--ghibli-green), var(--ghibli-blue));
+    color: white;
+    text-align: center;
+}
+
+.upload-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 
 text-align: center;
 }
