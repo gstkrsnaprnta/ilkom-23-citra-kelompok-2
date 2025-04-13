@@ -19,3 +19,6 @@ def convert_to_grayscale(input_path, output_path):
     if image is None:
         raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
     
+   # Mengubah gambar berwarna menjadi hitam-putih
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
