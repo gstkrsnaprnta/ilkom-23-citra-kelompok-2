@@ -28,3 +28,9 @@ def convert_to_art_sketch(input_path, output_path):
         
         # Menghaluskan gambar untuk membuat garis lebih rapi
         blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+        
+        # Membuat garis sketsa dengan menonjolkan tepi
+        sobelx = cv2.Sobel(blurred, cv2.CV_64F, 1, 0, ksize=3)
+        sobely = cv2.Sobel(blurred, cv2.CV_64F, 0, 1, ksize=3)
+        edges = np.sqrt(sobelx**2 + sobely**2)
+        edges = cv2.normalize(edges, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
