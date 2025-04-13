@@ -27,7 +27,7 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
     # Mendapatkan ukuran asli gambar
     h, w = img.shape[:2]
 
-    # Menentukan ukuran baru berdasarkan pilihan resolusi
+ # Menentukan ukuran baru berdasarkan pilihan resolusi
     if resolution == 'original':
         new_w, new_h = w, h
     elif resolution == '720p':
@@ -35,13 +35,14 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
     elif resolution == '1080p':
         new_w, new_h = 1920, 1080
     elif resolution == 'custom':
-        # Validasi input lebar dan tinggi
-        if width is None or height is None:
-            raise ValueError("Lebar dan tinggi harus ditentukan untuk resolusi 'custom'.")
-        if not isinstance(width, int) or not isinstance(height, int):
-            raise TypeError("Lebar dan tinggi harus berupa angka bulat.")
-        if width <= 0 or height <= 0:
-            raise ValueError("Lebar dan tinggi harus lebih besar dari 0.")
-        new_w, new_h = width, height
+        # Memeriksa apakah lebar dan tinggi valid
+        try:
+            new_w = int(width)
+            new_h = int(height)
+            if new_w <= 0 or new_h <= 0:
+                raise ValueError
+        except (TypeError, ValueError):
+            raise ValueError("Lebar dan tinggi khusus harus angka positif.")
     else:
         raise ValueError("Pilihan resolusi tidak valid. Gunakan 'original', '720p', '1080p', atau 'custom'.")
+    
