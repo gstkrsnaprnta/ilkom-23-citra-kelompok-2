@@ -27,3 +27,19 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+.hidden {
+    display: none;
+}
+
+/* --- Header Styles --- */
+header {
+    background: linear-gradient(135deg, var(--ghibli-blue), var(--ghibli-green));
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
