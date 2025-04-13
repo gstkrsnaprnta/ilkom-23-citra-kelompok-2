@@ -11,3 +11,6 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
         width (str): Lebar khusus untuk resolusi 'custom' (opsional).
         height (str): Tinggi khusus untuk resolusi 'custom' (opsional).
     
+   Returns:
+        str: Lokasi file hasil (output_path).
+    
