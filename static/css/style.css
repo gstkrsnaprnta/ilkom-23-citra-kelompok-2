@@ -152,3 +152,7 @@ text-align: center;
     gap: 15px;
     flex-wrap: wrap;
 }
+.custom-res div {
+    flex: 1;
+    min-width: 140px;
+}
