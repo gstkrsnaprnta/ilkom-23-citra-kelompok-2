@@ -184,3 +184,9 @@ text-align: center;
     box-shadow: 0 0 8px rgba(255, 111, 97, 0.2);
     outline: none;
 }
+.result-area .image-comparison {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
