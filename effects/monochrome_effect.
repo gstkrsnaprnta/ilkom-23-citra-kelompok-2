@@ -1,0 +1,4 @@
+import cv2
+
+def convert_to_grayscale(input_path, output_path):
+    """
