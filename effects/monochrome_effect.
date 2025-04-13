@@ -6,3 +6,6 @@ def convert_to_grayscale(input_path, output_path):
         input_path (str): Lokasi file gambar yang akan diubah (misalnya, 'foto.jpg').
         output_path (str): Lokasi untuk menyimpan hasil gambar hitam-putih.
     
+  Returns:
+        str: Lokasi file hasil (output_path).
+    
