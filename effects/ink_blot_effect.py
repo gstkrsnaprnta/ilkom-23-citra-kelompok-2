@@ -21,3 +21,9 @@ def convert_to_ink_blot(input_path, output_path, threshold=127):
     # Memeriksa apakah gambar berhasil dimuat
     if img is None:
         raise ValueError(f"Gagal memuat gambar. Pastikan file ada dan tidak rusak: {input_path}")
+    
+    # Mengubah gambar ke hitam-putih untuk mempersiapkan efek tinta
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    
+    # Membuat efek tinta dengan memisahkan warna jadi hitam atau putih saja
+    _, binary = cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY)
