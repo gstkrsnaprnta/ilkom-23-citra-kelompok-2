@@ -28,3 +28,5 @@ def convert_to_grayscale(input_path, output_path):
     # Menyimpan hasil gambar hitam-putih ke lokasi yang ditentukan
     cv2.imwrite(output_path, gray_image)
     
+  # Mengembalikan lokasi file hasil
+    return output_path
