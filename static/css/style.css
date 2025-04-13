@@ -65,6 +65,12 @@ header {
 }
 
 /* --- Hero Section --- */
+.hero {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--ghibli-blue);
+}
+
 text-align: center;
 }
 
