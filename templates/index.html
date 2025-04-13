@@ -137,3 +137,32 @@
                                 <h4>After</h4>
                                 <img id="result-image" class="result-img" alt="Transformed Image">
                             </div>
+                        </div>
+                        <div class="resolution-options">
+                            <label for="resolution">
+                                <strong>Select Output Resolution</strong>
+                            </label>
+                            <select id="resolution" name="resolution">
+                                <option value="original">Original (As Uploaded)</option>
+                                <option value="720p">HD - 1280 x 720</option>
+                                <option value="1080p">Full HD - 1920 x 1080</option>
+                                <option value="custom">Custom Size</option>
+                            </select>
+                            <div id="custom-res" class="custom-res hidden">
+                                <div>
+                                    <label for="width">Custom Width (px)</label>
+                                    <input type="number" id="width" name="width" min="1" value="800">
+                                </div>
+                                <div>
+            <label for="height">Custom Height (px)</label>
+            <input type="number" id="height" name="height" min="1" value="600">
+        </div>
+    </div>
+</div>
+
+<a href="#" id="download-link" class="download-button">
+    ⬇ Download Your Artwork
+</a>
+
+<p id="message-text" class="info-message"></p>
+
