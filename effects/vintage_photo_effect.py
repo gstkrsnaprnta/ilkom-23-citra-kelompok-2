@@ -45,4 +45,14 @@ def convert_to_vintage_photo(input_path, output_path):
         for i in range(3):
             vintage_image[:, :, i] = vintage_image[:, :, i] * (0.3 + 0.7 * mask / 255)
 
+        # Meningkatkan kontras untuk hasil lebih tajam
+        vintage_image = cv2.convertScaleAbs(vintage_image, alpha=1.2, beta=0)
+        
+        # Menyimpan hasil gambar vintage ke lokasi yang ditentukan
+        cv2.imwrite(output_path, vintage_image)
+        
+        # Mengembalikan lokasi file hasil
+        return output_path
+    except Exception as e:
+        raise ValueError(f"Kesalahan saat membuat foto vintage: {str(e)}")
 
