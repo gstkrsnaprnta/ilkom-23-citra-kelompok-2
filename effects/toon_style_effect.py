@@ -25,3 +25,13 @@ def convert_to_toon_style(input_path, output_path):
 
     # Menambahkan sedikit blur untuk menghaluskan noise sebelum membuat garis
     gray = cv2.medianBlur(gray, 5)
+
+ # Menghaluskan gambar hitam-putih agar garis lebih rapi
+    gray = cv2.medianBlur(gray, 5)
+    
+    # Membuat garis tebal untuk gaya kartun
+    edges = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 2)
+    
+    # Menghaluskan warna gambar asli agar terlihat seperti kartun
+    color = cv2.bilateralFilter(img, 9, 75, 75)
+    
