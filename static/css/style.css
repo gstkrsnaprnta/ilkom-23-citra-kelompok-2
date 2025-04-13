@@ -140,3 +140,9 @@ text-align: center;
     background-position: right 12px center;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+.conversion-options select:focus,
+.resolution-options select:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.2);
+    outline: none;
+}
