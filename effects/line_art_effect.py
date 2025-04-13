@@ -37,8 +37,7 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
  # Menyimpan hasil gambar garis seni ke lokasi yang ditentukan
         cv2.imwrite(output_path, edges_bgr)
         
-    # Mengembalikan lokasi file hasil jika berhasil
-    return output_path
-except Exception as error:
-    # Menangani kesalahan dan menampilkan pesan yang lebih jelas
-    raise RuntimeError(f"Gagal membuat garis seni. Detail kesalahan: {str(error)}")
+ # Mengembalikan lokasi file hasil
+        return output_path
+    except Exception as e:
+        raise ValueError(f"Kesalahan saat membuat garis seni: {str(e)}")
