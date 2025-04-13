@@ -172,6 +172,12 @@ header {
     gap: 40px;
 }
 
+.transform-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
 
 text-align: center;
 }
