@@ -53,6 +53,11 @@ header {
     align-items: center;
     gap: 15px;
 }
+
+.logo img {
+    height: 30px;
+}
+
 text-align: center;
 }
 
