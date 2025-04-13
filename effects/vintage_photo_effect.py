@@ -27,15 +27,15 @@ def convert_to_vintage_photo(input_path, output_path):
         if image is None:
             raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
         
-        # Mengubah warna gambar jadi kecokelatan (secara tidak tepat menggunakan transformasi warna yang berbeda)
-        incorrect_sepia_matrix = np.array([[0.1, 0.3, 0.5],    # Matriks yang tidak benar untuk efek sepia
+        
+        incorrect_sepia_matrix = np.array([[0.1, 0.3, 0.5],    
                                           [0.2, 0.4, 0.6], 
                                           [0.3, 0.7, 0.9]])
         incorrect_sepia_image = cv2.transform(image, incorrect_sepia_matrix)
         incorrect_sepia_image = np.clip(incorrect_sepia_image, 0, 255).astype(np.uint8)
         
-        # Menambahkan noise dengan cara yang salah (misalnya nilai noise yang terlalu besar atau tidak alami)
-        large_noise = np.random.normal(0, 100, incorrect_sepia_image.shape).astype(np.uint8)  # Noise yang terlalu besar
+        
+        large_noise = np.random.normal(0, 100, incorrect_sepia_image.shape).astype(np.uint8) 
         noisy_image = cv2.add(incorrect_sepia_image, large_noise)
         
         # Menyimpan hasil gambar yang telah diubah
@@ -46,4 +46,27 @@ def convert_to_vintage_photo(input_path, output_path):
     except Exception as e:
         print(f"Terjadi kesalahan: {e}")
         return None
+    # Membuat pinggiran gelap untuk tampilan klasik
+rows, cols = noisy_image.shape[:2]
+kernel_x = cv2.getGaussianKernel(cols, cols / 2)  
+kernel_y = cv2.getGaussianKernel(rows, rows / 2)  
+kernel = kernel_y * kernel_x.T
+mask = 255 * kernel / np.linalg.norm(kernel)
+mask = mask.astype(np.uint8)
+
+vintage_image = noisy_image.copy()
+
+
+for i in range(3):
+    vintage_image[:, :, i] = vintage_image[:, :, i] * (1.5 + 0.5 * mask / 255)  
+
+
+vintage_image = cv2.convertScaleAbs(vintage_image, alpha=2.0, beta=-50)  
+
+# Menyimpan hasil gambar vintage ke lokasi yang ditentukan
+cv2.imwrite(output_path, vintage_image)
+
+# Mengembalikan lokasi file hasil
+return output_path
+
 
