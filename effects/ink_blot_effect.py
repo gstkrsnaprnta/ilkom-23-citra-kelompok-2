@@ -15,3 +15,9 @@ def convert_to_ink_blot(input_path, output_path, threshold=127):
     Raises:
         ValueError: Jika gambar gagal dimuat atau ada kesalahan saat memproses.
     """
+    # Membaca gambar dari lokasi yang diberikan
+    img = cv2.imread(input_path)
+    
+    # Memeriksa apakah gambar berhasil dimuat
+    if img is None:
+        raise ValueError(f"Gagal memuat gambar. Pastikan file ada dan tidak rusak: {input_path}")
