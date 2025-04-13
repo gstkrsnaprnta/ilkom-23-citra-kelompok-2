@@ -35,3 +35,11 @@ def convert_to_toon_style(input_path, output_path):
     # Menghaluskan warna gambar asli agar terlihat seperti kartun
     color = cv2.bilateralFilter(img, 9, 75, 75)
     
+ # Menggabungkan warna halus dengan garis tebal untuk efek kartun
+    cartoon = cv2.bitwise_and(color, color, mask=edges)
+    
+    # Menyimpan hasil gambar kartun ke lokasi yang ditentukan
+    cv2.imwrite(output_path, cartoon)
+    
+    # Mengembalikan lokasi file hasil
+    return output_path
