@@ -40,3 +40,14 @@ def convert_to_art_sketch(input_path, output_path):
         
         # Menggabungkan garis sketsa dengan detail gambar asli
         sketch = cv2.addWeighted(inverted_edges, 0.8, gray, 0.2, 0)
+        
+        # Mengubah format untuk kompatibilitas dengan efek lain
+        sketch_bgr = cv2.cvtColor(sketch, cv2.COLOR_GRAY2BGR)
+        
+        # Menyimpan hasil gambar sketsa ke lokasi yang ditentukan
+        cv2.imwrite(output_path, sketch_bgr)
+        
+        # Mengembalikan lokasi file hasil
+        return output_path
+    except Exception as e:
+        raise ValueError(f"Kesalahan saat membuat sketsa seni: {str(e)}")
