@@ -14,3 +14,9 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
    Returns:
         str: Lokasi file hasil (output_path).
     
+  Raises:
+        ValueError: Jika gambar gagal dimuat atau parameter ukuran tidak valid.
+    """
+    # Membaca gambar dari lokasi yang diberikan
+    img = cv2.imread(input_path)
+    
