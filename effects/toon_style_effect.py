@@ -16,3 +16,7 @@ def convert_to_toon_style(input_path, output_path):
     """
   # Membaca gambar dari lokasi yang diberikan
     img = cv2.imread(input_path)
+ # Memeriksa apakah gambar berhasil dimuat
+    if img is None:
+        raise ValueError(f"Gagal memuat gambar. Pastikan file ada dan tidak rusak: {input_path}")
+    
