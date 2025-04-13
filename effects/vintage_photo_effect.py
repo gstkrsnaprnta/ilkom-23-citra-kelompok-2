@@ -34,6 +34,17 @@ def convert_to_vintage_photo(input_path, output_path):
         noise = np.random.normal(0, 25, sepia_image.shape).astype(np.uint8)
         noisy_image = cv2.add(sepia_image, noise)
 
+         # Membuat pinggiran gelap untuk tampilan klasik
+        rows, cols = noisy_image.shape[:2]
+        kernel_x = cv2.getGaussianKernel(cols, cols / 3)
+        kernel_y = cv2.getGaussianKernel(rows, rows / 3)
+        kernel = kernel_y * kernel_x.T
+        mask = 255 * kernel / np.linalg.norm(kernel)
+        mask = mask.astype(np.uint8)
+        vintage_image = noisy_image.copy()
+        for i in range(3):
+            vintage_image[:, :, i] = vintage_image[:, :, i] * (0.3 + 0.7 * mask / 255)
+
 
 for i in range(3):
     vintage_image[:, :, i] = vintage_image[:, :, i] * (1.5 + 0.5 * mask / 255)  
