@@ -71,6 +71,10 @@ header {
     background-color: var(--ghibli-blue);
 }
 
+.hero-content {
+    color: white;
+}
+
 text-align: center;
 }
 
