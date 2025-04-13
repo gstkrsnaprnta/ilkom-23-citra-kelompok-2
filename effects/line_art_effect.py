@@ -23,4 +23,7 @@ def convert_to_line_art(input_path, output_path, low_threshold=100, high_thresho
         
         if image is None:
             raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
+     
+        # Mengubah gambar berwarna menjadi hitam-putih untuk memudahkan deteksi garis
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
