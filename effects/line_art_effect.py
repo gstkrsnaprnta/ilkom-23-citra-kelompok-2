@@ -19,4 +19,4 @@ def convert_to_line_art(input_path, output_path, low_threshold=100, high_thresho
     """
     try:
         # Membaca gambar dari lokasi yang diberikan
-
+        image = cv2.imread(input_path)
