@@ -15,6 +15,24 @@ def convert_to_vintage_photo(input_path, output_path):
     Raises:
         ValueError: Jika gambar gagal dimuat atau ada kesalahan saat memproses.
     """
+    try:
+        # Membaca gambar dari lokasi yang diberikan
+        image = cv2.imread(input_path)
+        
+        # Memeriksa apakah gambar berhasil dimuat
+        if image is None:
+            raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
+        
+        # Mengubah warna gambar jadi kecokelatan seperti foto lama
+        sepia_matrix = np.array([[0.272, 0.534, 0.131],
+                                [0.349, 0.686, 0.168],
+                                [0.393, 0.769, 0.189]])
+        sepia_image = cv2.transform(image, sepia_matrix)
+        sepia_image = np.clip(sepia_image, 0, 255).astype(np.uint8)
+        
+        # Menambahkan bintik-bintik untuk efek usang
+        noise = np.random.normal(0, 25, sepia_image.shape).astype(np.uint8)
+        noisy_image = cv2.add(sepia_image, noise)
  
     # Membuat pinggiran gelap untuk tampilan klasik
 rows, cols = noisy_image.shape[:2]
