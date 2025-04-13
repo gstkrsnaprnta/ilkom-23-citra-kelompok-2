@@ -1,0 +1,3 @@
+import cv2
+
+def convert_to_ink_blot(input_path, output_path, threshold=127):
