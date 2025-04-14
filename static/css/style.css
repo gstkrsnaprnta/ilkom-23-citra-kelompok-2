@@ -538,3 +538,10 @@ footer {
 
     .custom-res {
         flex-direction: column;
+        gap: 10px;
+    }
+
+    .custom-res div {
+        min-width: 100%;
+    }
+}
