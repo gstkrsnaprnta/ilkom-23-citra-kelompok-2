@@ -129,3 +129,4 @@ def upload_image():
         if os.path.exists(temp_path):
             os.remove(temp_path)
         return jsonify({'error': str(e)}), 400
+    except Exception as e:
