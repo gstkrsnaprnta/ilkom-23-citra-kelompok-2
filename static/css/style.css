@@ -478,4 +478,13 @@ text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow saat hover */
 }
 
+/* Responsivitas */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        column-count: 3; /* 3 kolom di tablet */
+    }
+}
 
+@media (max-width: 768px) {
+    .gallery-grid {
+        column-count: 2; /* 2 kolom di mobile */
