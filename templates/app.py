@@ -120,3 +120,7 @@ def upload_image():
         logging.debug(f"File sementara dihapus: {temp_path}")
 
         return jsonify(response)
+
+    except ValueError as e:
+        # Menangani kesalahan yang diketahui (misalnya, file gagal diproses)
+        logging.error(f"Kesalahan: {str(e)}")
