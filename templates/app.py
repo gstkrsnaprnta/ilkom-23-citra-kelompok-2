@@ -118,3 +118,5 @@ def upload_image():
         # Membersihkan file sementara
         os.remove(temp_path)
         logging.debug(f"File sementara dihapus: {temp_path}")
+
+        return jsonify(response)
