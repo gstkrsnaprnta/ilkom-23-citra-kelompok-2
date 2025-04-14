@@ -488,3 +488,13 @@ text-align: center;
 @media (max-width: 768px) {
     .gallery-grid {
         column-count: 2; /* 2 kolom di mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        column-count: 1; /* 1 kolom di layar kecil */
+    }
+}
+
+/* --- Footer --- */
