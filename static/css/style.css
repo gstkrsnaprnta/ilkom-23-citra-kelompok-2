@@ -428,3 +428,13 @@ text-align: center;
     text-decoration: none;
     text-align: center;
     box-shadow: 0 4px 12px rgba(255, 111, 97, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: #e55a50;
+    box-shadow: 0 6px 16px rgba(255, 111, 97, 0.4);
+    transform: translateY(-3px);
+}
+
+.download-button:active {
