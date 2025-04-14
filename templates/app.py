@@ -91,3 +91,4 @@ def upload_image():
  try:
         # Memeriksa apakah jenis efek valid
         if conversion_type not in EFFECTS:
+            raise ValueError(f"Jenis efek tidak dikenal: {conversion_type}")
