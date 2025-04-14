@@ -66,3 +66,5 @@ def upload_image():
 
     # Memeriksa jenis file yang diizinkan (jpg, jpeg, png)
     allowed_extensions = {'.jpg', '.jpeg', '.png'}
+    if not os.path.splitext(file.filename)[1].lower() in allowed_extensions:
+        return jsonify({'error': 'Jenis file tidak valid. Hanya JPG, JPEG, dan PNG yang diizinkan.'}), 400
