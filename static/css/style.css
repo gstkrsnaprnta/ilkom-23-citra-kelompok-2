@@ -448,3 +448,13 @@ text-align: center;
 }
 
 /* Gallery Section */
+.gallery {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.gallery-grid {
+    column-count: 4; /* Jumlah kolom di desktop */
+    column-gap: 10px; /* Jarak antar kolom */
+    width: 100%;
+    margin: 0 auto;
