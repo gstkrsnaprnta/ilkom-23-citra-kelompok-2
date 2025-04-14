@@ -95,3 +95,4 @@ def upload_image():
         
         # Menerapkan efek yang dipilih
         effect_function = EFFECTS[conversion_type]
+        result_path = effect_function(input_path, temp_path)
