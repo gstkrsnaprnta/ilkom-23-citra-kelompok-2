@@ -49,3 +49,8 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload_image():
+
+    """
+    Menerima gambar yang diunggah, menerapkan efek seni, dan menghasilkan gambar hasil.
+    Mengembalikan URL untuk menampilkan dan mengunduh hasil.
+    """
