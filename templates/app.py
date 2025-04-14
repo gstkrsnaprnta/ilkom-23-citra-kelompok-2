@@ -106,3 +106,11 @@ def upload_image():
         # Mengubah ukuran gambar sesuai pilihan pengguna
         resize_image(temp_path, final_output_path, resolution, width, height) 
         logging.debug(f"Gambar diubah ukurannya ke: {final_output_path}")
+
+        # Menyiapkan respons dengan URL gambar
+        response = {
+            'message': 'Gambar selesai diproses',
+            'input_url': f'/static/uploads/{input_filename}',
+            'output_url': f'/static/outputs/{output_filename}',
+            'download_url': f'/download?file={output_filename}'
+        }
