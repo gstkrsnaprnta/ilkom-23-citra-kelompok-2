@@ -141,3 +141,9 @@ def upload_image():
 
 @app.route('/download', methods=['GET'])
 def download_file():
+
+    """
+    Mengizinkan pengguna mengunduh gambar hasil efek.
+    """
+    # Mendapatkan nama file dari permintaan
+    filename = request.args.get('file')
