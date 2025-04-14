@@ -58,4 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Siapkan data untuk dikirim ke server
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('conversion_type', document.getElementById('conversion-type').value);
+        const resolution = resolutionSelect.value;
+        formData.append('resolution', resolution);
+
+        // Validasi dan tambahkan ukuran custom jika diperlukan
+        if (resolution === 'custom') {
+            const width = parseInt(widthInput.value);
+
       
