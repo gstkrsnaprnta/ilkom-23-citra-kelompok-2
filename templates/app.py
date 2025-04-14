@@ -16,3 +16,5 @@ from effects.resize_image import resize_image
 Aplikasi web Sketchify untuk mengubah gambar dengan efek seni seperti sketsa, komik, dan lukisan.
 Menerima unggahan gambar, menerapkan efek, dan menyediakan hasil untuk diunduh.
 """
+# Mengatur logging untuk membantu menemukan masalah
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
