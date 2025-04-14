@@ -147,14 +147,4 @@ def download_file():
     """
     # Mendapatkan nama file dari permintaan
     filename = request.args.get('file')
-    path = os.path.join(OUTPUT_FOLDER, filename)
-
-logging.debug(f"File akan dikirim: {path}")
-
-if not os.path.isfile(path):
-    return jsonify({'error': 'Tidak ada file'}), 404
-
-return send_file(path, as_attachment=True, download_name=filename)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+   
