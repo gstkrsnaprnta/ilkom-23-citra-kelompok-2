@@ -18,3 +18,6 @@ Menerima unggahan gambar, menerapkan efek, dan menyediakan hasil untuk diunduh.
 """
 # Mengatur logging untuk membantu menemukan masalah
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Inisialisasi aplikasi Flask
+app = Flask(__name__, static_folder='static', template_folder='templates')
