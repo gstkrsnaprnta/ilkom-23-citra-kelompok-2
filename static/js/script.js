@@ -68,5 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Validasi dan tambahkan ukuran custom jika diperlukan
         if (resolution === 'custom') {
             const width = parseInt(widthInput.value);
+            const height = parseInt(heightInput.value);
+            if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
 
       
