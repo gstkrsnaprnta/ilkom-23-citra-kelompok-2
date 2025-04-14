@@ -54,3 +54,8 @@ def upload_image():
     Menerima gambar yang diunggah, menerapkan efek seni, dan menghasilkan gambar hasil.
     Mengembalikan URL untuk menampilkan dan mengunduh hasil.
     """
+    # Memeriksa apakah ada file dalam unggahan
+    if 'file' not in request.files:
+        return jsonify({'error': 'Tidak ada file yang diunggah'}), 400
+    
+    file = request.files['file']
