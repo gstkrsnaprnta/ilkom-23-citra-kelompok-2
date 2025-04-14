@@ -18,3 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const customResDiv = document.getElementById('custom-res');
     const widthInput = document.getElementById('width');
     const heightInput = document.getElementById('height');
+
+    // Tampilkan input resolusi custom saat memilih 'custom'
+    resolutionSelect.addEventListener('change', () => {
+        customResDiv.classList.toggle('hidden', resolutionSelect.value !== 'custom');
+    });
+
+    // Klik tombol unggah untuk memilih file
+    uploadButton.addEventListener('click', () => {
+        fileInput.click();
+    });
