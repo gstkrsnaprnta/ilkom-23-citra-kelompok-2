@@ -138,3 +138,6 @@ def upload_image():
         if os.path.exists(temp_path):
             os.remove(temp_path)
         return jsonify({'error': 'Terjadi kesalahan saat memproses gambar'}), 500
+
+        @app.route('/download', methods=['GET'])
+def download_file():
