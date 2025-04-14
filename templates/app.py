@@ -21,3 +21,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 
 # Inisialisasi aplikasi Flask
 app = Flask(__name__, static_folder='static', template_folder='templates')
+
+# Menentukan folder untuk menyimpan gambar yang diunggah dan hasil efek
+UPLOAD_FOLDER = 'static/uploads'
+OUTPUT_FOLDER = 'static/outputs'
