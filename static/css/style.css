@@ -468,3 +468,14 @@ text-align: center;
 .gallery-item img {
     width: 100%; /* Gambar mengisi lebar kolom */
     height: auto; /* Tinggi menyesuaikan rasio aspek */
+    border-radius: 10px; /* Sudut membulat seperti Pinterest */
+    display: block; /* Menghilangkan celah bawah gambar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: translateY(-5px); /* Efek naik saat hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow saat hover */
+}
+
+
