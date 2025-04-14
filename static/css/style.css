@@ -508,3 +508,13 @@ footer {
     text-align: center;
     color: #aaa;
     font-size: 14px;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .transform-steps {
+        flex-direction: column;
