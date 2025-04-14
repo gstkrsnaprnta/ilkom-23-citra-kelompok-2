@@ -29,3 +29,13 @@ OUTPUT_FOLDER = 'static/outputs'
 # Membuat folder jika belum ada
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+
+# Peta efek: menghubungkan jenis efek dengan fungsi yang sesuai
+EFFECTS = {
+    'monochrome_glow': convert_to_grayscale,
+    'line_art': convert_to_line_art,
+    'toon_style': convert_to_toon_style,
+    'ink_blot': convert_to_ink_blot,
+    'art_sketch': convert_to_art_sketch,
+    'vintage_photo': convert_to_vintage_photo,
+}
