@@ -100,3 +100,5 @@ def upload_image():
         # Memeriksa apakah file sementara berhasil dibuat
         if not os.path.exists(temp_path):
             raise ValueError(f"Gagal membuat file sementara untuk efek {conversion_type}: {temp_path}")
+
+        logging.debug(f"Efek {conversion_type} diterapkan, file sementara: {temp_path}")
