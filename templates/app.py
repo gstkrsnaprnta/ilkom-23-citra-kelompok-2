@@ -25,3 +25,7 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 # Menentukan folder untuk menyimpan gambar yang diunggah dan hasil efek
 UPLOAD_FOLDER = 'static/uploads'
 OUTPUT_FOLDER = 'static/outputs'
+
+# Membuat folder jika belum ada
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(OUTPUT_FOLDER, exist_ok=True)
