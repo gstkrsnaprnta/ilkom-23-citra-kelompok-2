@@ -45,3 +45,4 @@ def index():
     """
     Menampilkan halaman utama aplikasi (index.html).
     """
+    return render_template('index.html')
