@@ -78,3 +78,8 @@ def upload_image():
     resolution = request.form.get('resolution', 'original')
     width = request.form.get('width')
     height = request.form.get('height')
+
+    # Membuat nama file untuk hasil efek
+    output_filename = f"{conversion_type}_{int(time())}_{file.filename}"
+    temp_path = os.path.join(OUTPUT_FOLDER, f"temp_{output_filename}")
+    final_output_path = os.path.join(OUTPUT_FOLDER, output_filename)
