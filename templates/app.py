@@ -130,3 +130,11 @@ def upload_image():
             os.remove(temp_path)
         return jsonify({'error': str(e)}), 400
     except Exception as e:
+
+         # Menangani kesalahan tak terduga
+        logging.error(f"Kesalahan tak terduga: {str(e)}")
+        if os.path.exists(input_path):
+            os.remove(input_path)
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+        return jsonify({'error': 'Terjadi kesalahan saat memproses gambar'}), 500
