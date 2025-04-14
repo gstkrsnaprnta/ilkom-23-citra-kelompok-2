@@ -96,3 +96,7 @@ def upload_image():
         # Menerapkan efek yang dipilih
         effect_function = EFFECTS[conversion_type]
         result_path = effect_function(input_path, temp_path)
+
+        # Memeriksa apakah file sementara berhasil dibuat
+        if not os.path.exists(temp_path):
+            raise ValueError(f"Gagal membuat file sementara untuk efek {conversion_type}: {temp_path}")
