@@ -147,4 +147,17 @@ def download_file():
     """
     # Mendapatkan nama file dari permintaan
     filename = request.args.get('file')
-   
+    file_path = os.path.join(OUTPUT_FOLDER, filename)
+    
+    logging.debug(f"Mengunduh file: {file_path}")
+    
+    # Memeriksa apakah file ada
+    if not os.path.exists(file_path):
+        return jsonify({'error': 'File tidak ditemukan'}), 404
+    
+    # Mengirim file untuk diunduh
+    return send_file(file_path, as_attachment=True, download_name=filename)
+
+if __name__ == '__main__':
+    # Menjalankan aplikasi dalam mode debug
+    app.run(debug=True)   
