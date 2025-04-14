@@ -528,3 +528,13 @@ footer {
 
     .image-comparison {
         flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+    .custom-res {
+        flex-direction: column;
