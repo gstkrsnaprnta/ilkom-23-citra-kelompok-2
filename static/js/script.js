@@ -38,3 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const files = e.dataTransfer.files;
         if (files.length > 0) {
+            processFile(files[0]);
+        }
+    });
+
+    // Tangani pemilihan file dari tombol atau drag
+    fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+            processFile(fileInput.files[0]);
+        }
+    });
