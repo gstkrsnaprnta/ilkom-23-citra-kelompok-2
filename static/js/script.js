@@ -48,3 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
             processFile(fileInput.files[0]);
         }
     });
+
+     // Fungsi untuk memproses file yang diunggah
+    function processFile(file) {
+        // Validasi tipe file (hanya gambar)
+        if (!file.type.startsWith('image/')) {
+            messageText.textContent = 'Harap unggah file gambar (JPEG, PNG, dll.).';
+            resultArea.classList.add('hidden');
+            return;
+        }
+
+      
