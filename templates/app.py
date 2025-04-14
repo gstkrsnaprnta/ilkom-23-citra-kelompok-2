@@ -105,3 +105,4 @@ def upload_image():
 
         # Mengubah ukuran gambar sesuai pilihan pengguna
         resize_image(temp_path, final_output_path, resolution, width, height) 
+        logging.debug(f"Gambar diubah ukurannya ke: {final_output_path}")
