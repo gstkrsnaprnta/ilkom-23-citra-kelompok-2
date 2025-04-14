@@ -71,3 +71,4 @@ def upload_image():
 
     # Membuat nama file unik untuk gambar yang diunggah
     input_filename = f"input_{int(time())}_{file.filename}"
+    input_path = os.path.join(UPLOAD_FOLDER, input_filename)
