@@ -114,3 +114,7 @@ def upload_image():
             'output_url': f'/static/outputs/{output_filename}',
             'download_url': f'/download?file={output_filename}'
         }
+
+        # Membersihkan file sementara
+        os.remove(temp_path)
+        logging.debug(f"File sementara dihapus: {temp_path}")
