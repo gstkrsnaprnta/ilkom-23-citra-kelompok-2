@@ -46,3 +46,6 @@ def index():
     Menampilkan halaman utama aplikasi (index.html).
     """
     return render_template('index.html')
+
+@app.route('/upload', methods=['POST'])
+def upload_image():
