@@ -39,3 +39,9 @@ EFFECTS = {
     'art_sketch': convert_to_art_sketch,
     'vintage_photo': convert_to_vintage_photo,
 }
+
+@app.route('/')
+def index():
+    """
+    Menampilkan halaman utama aplikasi (index.html).
+    """
