@@ -59,3 +59,7 @@ def upload_image():
         return jsonify({'error': 'Tidak ada file yang diunggah'}), 400
     
     file = request.files['file']
+
+    # Memeriksa apakah nama file tidak kosong
+    if file.filename == '':
+        return jsonify({'error': 'Tidak ada file yang dipilih'}), 400
