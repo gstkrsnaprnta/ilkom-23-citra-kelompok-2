@@ -76,3 +76,5 @@ def upload_image():
     # Mendapatkan jenis efek, resolusi, dan ukuran dari formulir
     conversion_type = request.form.get('conversion_type', 'monochrome_glow')
     resolution = request.form.get('resolution', 'original')
+    width = request.form.get('width')
+    height = request.form.get('height')
