@@ -518,3 +518,13 @@ footer {
 
     .transform-steps {
         flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .step {
+        max-width: 100%;
+    }
+
+    .image-comparison {
+        flex-direction: column;
