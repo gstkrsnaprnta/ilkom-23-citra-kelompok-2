@@ -63,3 +63,6 @@ def upload_image():
     # Memeriksa apakah nama file tidak kosong
     if file.filename == '':
         return jsonify({'error': 'Tidak ada file yang dipilih'}), 400
+
+    # Memeriksa jenis file yang diizinkan (jpg, jpeg, png)
+    allowed_extensions = {'.jpg', '.jpeg', '.png'}
