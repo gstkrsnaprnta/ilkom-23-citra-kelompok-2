@@ -124,3 +124,8 @@ def upload_image():
     except ValueError as e:
         # Menangani kesalahan yang diketahui (misalnya, file gagal diproses)
         logging.error(f"Kesalahan: {str(e)}")
+         if os.path.exists(input_path):
+            os.remove(input_path)
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+        return jsonify({'error': str(e)}), 400
