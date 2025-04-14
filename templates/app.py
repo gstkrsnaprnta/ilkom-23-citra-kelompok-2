@@ -11,3 +11,8 @@ from effects.ink_blot_effect import convert_to_ink_blot
 from effects.art_sketch_effect import convert_to_art_sketch
 from effects.vintage_photo_effect import convert_to_vintage_photo
 from effects.resize_image import resize_image
+
+"""
+Aplikasi web Sketchify untuk mengubah gambar dengan efek seni seperti sketsa, komik, dan lukisan.
+Menerima unggahan gambar, menerapkan efek, dan menyediakan hasil untuk diunduh.
+"""
