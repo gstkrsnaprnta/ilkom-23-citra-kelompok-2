@@ -70,7 +70,3 @@ document.addEventListener('DOMContentLoaded', () => {
             const width = parseInt(widthInput.value);
             const height = parseInt(heightInput.value);
             if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
-messageText.textContent = 'Lebar dan tinggi harus angka positif.';
-                resultArea.classList.add('hidden');
-                return;
-            }
