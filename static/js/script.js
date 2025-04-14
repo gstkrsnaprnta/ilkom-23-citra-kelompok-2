@@ -28,3 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
     uploadButton.addEventListener('click', () => {
         fileInput.click();
     });
+
+    // Tangani drag-and-drop gambar
+    uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault(); // Cegah browser membuka file
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
