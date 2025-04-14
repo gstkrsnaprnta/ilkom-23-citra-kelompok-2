@@ -102,3 +102,6 @@ def upload_image():
             raise ValueError(f"Gagal membuat file sementara untuk efek {conversion_type}: {temp_path}")
 
         logging.debug(f"Efek {conversion_type} diterapkan, file sementara: {temp_path}")
+
+        # Mengubah ukuran gambar sesuai pilihan pengguna
+        resize_image(temp_path, final_output_path, resolution, width, height) 
