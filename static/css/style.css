@@ -458,3 +458,13 @@ text-align: center;
     column-gap: 10px; /* Jarak antar kolom */
     width: 100%;
     margin: 0 auto;
+}
+
+.gallery-item {
+    break-inside: avoid; /* Mencegah item terpotong antar kolom */
+    margin-bottom: 10px; /* Jarak antar item secara vertikal */
+}
+
+.gallery-item img {
+    width: 100%; /* Gambar mengisi lebar kolom */
+    height: auto; /* Tinggi menyesuaikan rasio aspek */
