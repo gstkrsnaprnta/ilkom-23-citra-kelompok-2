@@ -87,3 +87,7 @@ def upload_image():
     # Menyimpan gambar yang diunggah
     file.save(input_path)
     logging.debug(f"Gambar disimpan di: {input_path}")
+
+ try:
+        # Memeriksa apakah jenis efek valid
+        if conversion_type not in EFFECTS:
