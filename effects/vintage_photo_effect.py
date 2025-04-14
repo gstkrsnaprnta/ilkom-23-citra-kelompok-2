@@ -33,8 +33,8 @@ def convert_to_vintage_photo(input_path, output_path):
         # Menambahkan bintik-bintik untuk efek usang
         noise = np.random.normal(0, 25, sepia_image.shape).astype(np.uint8)
         noisy_image = cv2.add(sepia_image, noise)
-
-         # Membuat pinggiran gelap untuk tampilan klasik
+        
+        # Membuat pinggiran gelap untuk tampilan klasik
         rows, cols = noisy_image.shape[:2]
         kernel_x = cv2.getGaussianKernel(cols, cols / 3)
         kernel_y = cv2.getGaussianKernel(rows, rows / 3)
@@ -44,7 +44,7 @@ def convert_to_vintage_photo(input_path, output_path):
         vintage_image = noisy_image.copy()
         for i in range(3):
             vintage_image[:, :, i] = vintage_image[:, :, i] * (0.3 + 0.7 * mask / 255)
-
+        
         # Meningkatkan kontras untuk hasil lebih tajam
         vintage_image = cv2.convertScaleAbs(vintage_image, alpha=1.2, beta=0)
         
@@ -55,4 +55,3 @@ def convert_to_vintage_photo(input_path, output_path):
         return output_path
     except Exception as e:
         raise ValueError(f"Kesalahan saat membuat foto vintage: {str(e)}")
-
