@@ -92,3 +92,6 @@ def upload_image():
         # Memeriksa apakah jenis efek valid
         if conversion_type not in EFFECTS:
             raise ValueError(f"Jenis efek tidak dikenal: {conversion_type}")
+        
+        # Menerapkan efek yang dipilih
+        effect_function = EFFECTS[conversion_type]
