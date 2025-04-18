@@ -70,3 +70,45 @@ document.addEventListener('DOMContentLoaded', () => {
             const width = parseInt(widthInput.value);
             const height = parseInt(heightInput.value);
             if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
+                messageText.textContent = 'Lebar dan tinggi harus angka positif.';
+                resultArea.classList.add('hidden');
+                return;
+            }
+            formData.append('width', width);
+            formData.append('height', height);
+        }
+        // Nonaktifkan tombol saat memproses
+        uploadButton.textContent = 'Memproses...';
+        uploadButton.disabled = true;
+        messageText.textContent = '';
+
+        // Kirim gambar ke server
+        fetch('/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                messageText.textContent = data.error;
+                resultArea.classList.add('hidden');
+            } else {
+                originalImage.src = data.input_url;
+                resultImage.src = data.output_url;
+                downloadLink.href = data.download_url;
+                messageText.textContent = data.message || 'Gambar berhasil diproses dengan Sketchify!';
+                resultArea.classList.remove('hidden');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            messageText.textContent = 'Terjadi kesalahan saat memproses gambar.';
+            resultArea.classList.add('hidden');
+        })
+        .finally(() => {
+            // Kembalikan tombol ke semula
+            uploadButton.textContent = 'Pilih File';
+            uploadButton.disabled = false;
+        });
+    }
+});
