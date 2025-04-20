@@ -70,7 +70,7 @@ Berikut langkah-langkah agar kamu bisa menjalankan aplikasi ini di laptopmu:
 
 Ketik perintah berikut untuk memastikan:
 ```bash
-python --version
+1. python --version
 
 2. Buka Terminal dan Pindah ke Folder Proyek
 
