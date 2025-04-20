@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def monochrome_glow(input_path, output_path):
+def convert_to_grayscale(input_path, output_path):
     """
     Args:
         input_path (str): Lokasi file gambar yang akan diubah (misalnya, 'foto.jpg').
