@@ -31,28 +31,34 @@ Semua efek dibuat dalam file Python yang berbeda di folder `effects/`, berikut a
 
 ## 📁 Struktur Folder Proyek
 ILKOM-23-CITRA/
-├── effects/                  # Folder berisi efek-efek gambar (.py)
-│   ├── art_sketch_effect.py
-│   ├── ink_blot_effect.py
-│   ├── line_art_effect.py
-│   ├── monochrome_effect.py
-│   ├── resize_image.py
-│   ├── toon_style_effect.py
-│   └── vintage_photo_effect.py
-│
-├── static/                   # Folder untuk file front-end (style & script)
-│   ├── css/
-│   │   └── style.css         # Gaya tampilan halaman
-│   └── js/
-│       └── script.js         # Interaksi JavaScript (jika digunakan)
-│
-├── templates/
-│   └── index.html            # Halaman utama HTML (template Flask)
-│
-├── app.py                    # File utama yang menjalankan aplikasi Flask
-├── requirements.txt          # Daftar pustaka Python yang dibutuhkan
-└── .gitignore                # Mengabaikan file tertentu dari Git
-
+  ├── effects/
+  │   ├── art_sketch_effect.py
+  │   ├── ink_blot_effect.py
+  │   ├── line_art_effect.py
+  │   ├── monochrome_effect.py
+  │   ├── resize_image.py
+  │   ├── toon_style_effect.py
+  │   └── vintage_photo_effect.py
+  ├── static/
+  │   ├── css/
+  │   │   └── style.css
+  │   ├── js/
+  │   │   └── script.js
+  │   └── images/
+  │       ├── hero-bg.jpg
+  │       ├── gallery1.jpg
+  │       ├── gallery2.jpg
+  │       ├── gallery3.jpg
+  │       ├── gallery4.jpg
+  │       ├── gallery5.jpg
+  │       ├── gallery6.jpg
+  │       ├── gallery7.jpg
+  │       └── gallery8.jpg
+  ├── templates/
+  │   └── index.html
+  ├── app.py
+  ├── requirements.txt
+  └── .gitignore
 
 ---
 
