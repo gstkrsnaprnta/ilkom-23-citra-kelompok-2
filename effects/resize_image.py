@@ -1,15 +1,15 @@
 import cv2
 
 def resize_image(input_path, output_path, resolution='original', width=None, height=None):
- """
+    """
     Mengubah ukuran gambar untuk menyesuaikan kualitas saat diunduh, misalnya ke 720p atau ukuran khusus.
     
     Args:
         input_path (str): Lokasi file gambar yang akan diubah (misalnya, 'foto.jpg').
         output_path (str): Lokasi untuk menyimpan hasil gambar.
         resolution (str): Pilihan ukuran: 'original', '720p', '1080p', atau 'custom'.
-        width (str): Lebar khusus untuk resolusi 'custom' (opsional).
-        height (str): Tinggi khusus untuk resolusi 'custom' (opsional).
+        width (int, optional): Lebar khusus untuk resolusi 'custom'.
+        height (int, optional): Tinggi khusus untuk resolusi 'custom'.
     
     Returns:
         str: Lokasi file hasil (output_path).
@@ -17,7 +17,7 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
     Raises:
         ValueError: Jika gambar gagal dimuat atau parameter ukuran tidak valid.
     """
-   # Membaca gambar dari lokasi yang diberikan
+    # Membaca gambar dari lokasi yang diberikan
     img = cv2.imread(input_path)
     
     # Memeriksa apakah gambar berhasil dimuat
@@ -27,7 +27,7 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
     # Mendapatkan ukuran asli gambar
     h, w = img.shape[:2]
 
- # Menentukan ukuran baru berdasarkan pilihan resolusi
+    # Menentukan ukuran baru berdasarkan pilihan resolusi
     if resolution == 'original':
         new_w, new_h = w, h
     elif resolution == '720p':
@@ -40,13 +40,13 @@ def resize_image(input_path, output_path, resolution='original', width=None, hei
             new_w = int(width)
             new_h = int(height)
             if new_w <= 0 or new_h <= 0:
-                raise ValueError
+                raise ValueError("Lebar dan tinggi khusus harus angka positif.")
         except (TypeError, ValueError):
             raise ValueError("Lebar dan tinggi khusus harus angka positif.")
     else:
         raise ValueError("Pilihan resolusi tidak valid. Gunakan 'original', '720p', '1080p', atau 'custom'.")
     
-  # Mengubah ukuran gambar jika berbeda dari aslinya
+    # Mengubah ukuran gambar jika berbeda dari aslinya
     if (new_w, new_h) != (w, h):
         # Memilih metode terbaik: INTER_CUBIC untuk memperbesar, INTER_AREA untuk memperkecil
         if new_w * new_h > w * h:
