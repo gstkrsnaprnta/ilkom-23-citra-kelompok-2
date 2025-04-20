@@ -53,3 +53,37 @@ ILKOM-23-CITRA/
 ├── requirements.txt          # Daftar pustaka Python yang dibutuhkan
 └── .gitignore                # Mengabaikan file tertentu dari Git
 
+
+---
+
+## ⚙️ Cara Menjalankan Aplikasi
+
+Berikut langkah-langkah agar kamu bisa menjalankan aplikasi ini di laptopmu:
+
+### 1. **Pastikan Python sudah terinstall**
+
+Ketik perintah berikut untuk memastikan:
+```bash
+python --version
+
+2. Buka Terminal dan Pindah ke Folder Proyek
+
+cd ILKOM-23-CITRA
+
+3. (Opsional) Buat Virtual Environment
+
+python -m venv venv
+venv\Scripts\activate       # Jika di Windows
+source venv/bin/activate   # Jika di Linux/macOS
+
+4. Install Semua Pustaka
+
+pip install -r requirements.txt
+
+5. Jalankan Aplikasinya
+
+python app.py
+
+6. Buka Browser dan Akses
+
+http://127.0.0.1:5000
