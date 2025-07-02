@@ -19,6 +19,12 @@ def convert_to_grayscale(input_path, output_path):
     # Memeriksa apakah gambar berhasil dimuat
     if image is None:
         raise ValueError("Gagal memuat gambar. Pastikan file ada dan tidak rusak.")
+
+    # Mengubah gambar berwarna menjadi hitam-putih (grayscale)
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    # Menerapkan Gaussian Blur untuk menciptakan efek glow
+    blurred = cv2.GaussianBlur(gray_image, (21, 21), 0)
     
     # Menggabungkan gambar grayscale dengan gambar yang diblur untuk efek glow
     glow_image = cv2.addWeighted(gray_image, 0.5, blurred, 0.5, 0)
